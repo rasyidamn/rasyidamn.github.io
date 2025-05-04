@@ -1,6 +1,7 @@
 import { Menu, X } from "lucide-react";
 import React, { use, useEffect, useState } from "react";
 import { Link } from "react-scroll";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const navItems = [
@@ -28,7 +29,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-40 transition-all duration-300 ${
-        isScroll ? "py-3 bg-background/80 backdrop-blur-md shadow-md" : "py-5"
+        isScroll ? "py-3 bg-background/90 " : "py-5"
       }`}
     >
       <div className="container flex justify-between items-center">
@@ -43,7 +44,7 @@ const Navbar = () => {
         </a>
 
         {/* desktop nav */}
-        <div className="hidden md:flex space-x-8 font-semibold">
+        <div className="hidden md:flex space-x-8 font-semibold items-center">
           {navItems.map((navItem, key) => (
             // <a
             //   href={navItem.href}
@@ -65,6 +66,7 @@ const Navbar = () => {
               {navItem.name}
             </Link>
           ))}
+          <ThemeToggle />
         </div>
 
         {/* mobile nav */}
@@ -77,7 +79,7 @@ const Navbar = () => {
         </button>
 
         <div
-          className={`fixed inset-0 backdrop-blur-md z-40 flex flex-col items-center justify-center transition-all duration-300 md:hidden ${
+          className={`fixed right-0 top-0 w-full h-screen bg-background/50 backdrop-blur-md z-40 flex flex-col items-center justify-center transition-all duration-300 md:hidden ${
             isMenuOpen
               ? "translate-x-0 pointer-events-auto"
               : "translate-x-full pointer-events-none"
@@ -85,15 +87,30 @@ const Navbar = () => {
         >
           <div className="flex flex-col space-y-8 text-xl">
             {navItems.map((navItem, key) => (
-              <a
-                href={navItem.href}
+              // <a
+              //   href={navItem.href}
+              //   key={key}
+              //   className="text-foreground/80 hover:text-primary transition-colors duration-500"
+              //   onClick={() => setIsMenuOpen(false)}
+              // >
+              //   {navItem.name}
+              // </a>
+
+              <Link
+                to={navItem.href}
+                spy={true}
+                smooth={true}
+                duration={500}
                 key={key}
-                className="text-foreground/80 hover:text-primary transition-colors duration-500"
+                className="cursor-pointer text-foreground/80 hover:text-primary transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navItem.name}
-              </a>
+              </Link>
             ))}
+            
+
+            <ThemeToggle />
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
-
 import React from "react";
+import { Link } from "react-scroll";
 
 const HeroSection = () => {
   return (
@@ -26,17 +26,18 @@ const HeroSection = () => {
           </p>
 
           <div className="flex justify-center py-6 opacity-0 animate-fade-in-delay-4">
-            <a
-              href="#projects"
-              className="cosmic-button"
+            <Link
+              to="projects"
+              spy={true}
+              duration={500}
+              smooth={true}
+              className="cosmic-button cursor-pointer"
             >
               View My Work
-            </a>
+            </Link>
           </div>
         </div>
       </div>
-
-      
     </section>
   );
 };

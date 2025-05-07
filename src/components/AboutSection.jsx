@@ -8,24 +8,24 @@ const AboutSection = () => {
       className="flex items-center justify-center min-h-screen py-24 px-4 relative"
     >
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold  mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold  mb-6 md:mb-12 text-center">
           About <span className="text-primary">Me</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-xl md:text-2xl font-semibold">
               Passionate Web Developer & Tech Creator
             </h3>
 
-            <p className="text-foreground">
+            <p className="text-sm md:text-lg text-foreground">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
               blanditiis, obcaecati sit tempora pariatur eligendi excepturi
               dolores animi nemo corrupti at deserunt, repellat rem nesciunt.
               Ullam cum aliquid soluta dolores!
             </p>
 
-            <p className="text-foreground">
+            <p className="text-sm md:text-lg text-foreground">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit
               nisi ducimus iste, quae quibusdam architecto, at optio, numquam
               eveniet delectus aliquam facere asperiores cum? Sunt repellendus
